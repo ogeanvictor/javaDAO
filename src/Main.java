@@ -8,11 +8,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
         SellerDao sellerDao = DaoFactory.createSellerDao();
+
+        System.out.println("\n** FindById **");
+        Seller sellerId = sellerDao.findById(3);
+        System.out.println(sellerId);
+
+        System.out.println("\n** FindByDepartment **");
         Department department = new Department(2, null);
         List<Seller> sellers = sellerDao.findByDepartment(department);
         for (Seller seller : sellers) {
+            System.out.println(seller);
+        }
+
+        System.out.println("\n** FindAll **");
+        List<Seller> list = sellerDao.findAll();
+        for (Seller seller : list) {
             System.out.println(seller);
         }
 
