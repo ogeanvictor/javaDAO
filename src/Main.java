@@ -1,5 +1,7 @@
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
+import model.dao.impl.DepartmentDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -46,6 +48,17 @@ public class Main {
         int id = sc.nextInt();
         sellerDao.deleteById(id);
         System.out.println("Deleted!");
+
+
+        System.out.println("======================================");
+        System.out.println("Department");
+
+        DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+
+        System.out.println("\n** Insert **");
+        Department newDepartment = new Department(null, "Sports");
+        departmentDao.insert(newDepartment);
+        System.out.println("Inserted! New id = " + newDepartment.getId());
 
         sc.close();
     }
