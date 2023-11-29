@@ -55,6 +55,16 @@ public class Main {
 
         DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
+        System.out.println("\n** FindById **");
+        Department oneDepartment = departmentDao.findById(4);
+        System.out.println(oneDepartment);
+
+        System.out.println("\n** FindAll **");
+        List<Department> departments = departmentDao.findAll();
+        for (Department departmentUni : departments) {
+            System.out.println(departmentUni);
+        }
+
         System.out.println("\n** Insert **");
         Department newDepartment = new Department(null, "Sports");
         departmentDao.insert(newDepartment);
@@ -65,11 +75,6 @@ public class Main {
         updateDepartment.setName("Sports Atualizado");
         departmentDao.update(updateDepartment);
         System.out.println("Updated!");
-
-        System.out.println("\n** FindById **");
-        Department oneDepartment = departmentDao.findById(4);
-        System.out.println(oneDepartment);
-
 
         System.out.println("\n** Delete **");
         System.out.println("Insert id: ");
