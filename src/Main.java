@@ -60,6 +60,12 @@ public class Main {
         departmentDao.insert(newDepartment);
         System.out.println("Inserted! New id = " + newDepartment.getId());
 
+        System.out.println("\n** Update **");
+        Department updateDepartment = departmentDao.findById(6);
+        updateDepartment.setName("Sports Atualizado");
+        departmentDao.update(updateDepartment);
+        System.out.println("Updated!");
+
         System.out.println("\n** FindById **");
         Department oneDepartment = departmentDao.findById(4);
         System.out.println(oneDepartment);
