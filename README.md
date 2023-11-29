@@ -4,6 +4,8 @@ Esse projeto é um simples CRUD de um vendedor e departamento, utilizando **Java
 
 O intuito da criação desse projeto foi para o estudo de **acesso ao banco de dados com JDBC**.
 
+O projeto foi criado e buildado com o **IntelliJ IDEA**.
+
 ## Como Executar
 
 1. Clone o repositório:
