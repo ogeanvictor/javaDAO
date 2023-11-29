@@ -69,6 +69,14 @@ public class Main {
         System.out.println("\n** FindById **");
         Department oneDepartment = departmentDao.findById(4);
         System.out.println(oneDepartment);
+
+
+        System.out.println("\n** Delete **");
+        System.out.println("Insert id: ");
+        int departmentId = sc.nextInt();
+        departmentDao.deleteById(departmentId);
+        System.out.println("Deleted!");
+
         sc.close();
     }
 }

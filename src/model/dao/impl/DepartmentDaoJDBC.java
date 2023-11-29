@@ -53,8 +53,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
         try {
             statement = conn.prepareStatement(
             "UPDATE department " +
-                    "SET Name = ? " +
-                    "WHERE Id = ?"
+                "SET Name = ? " +
+                "WHERE Id = ?"
             );
 
             statement.setString(1, department.getName());
@@ -63,12 +63,27 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
+        } finally {
+            Db.closeStatement(statement);
         }
     }
 
     @Override
     public void deleteById(Integer id) {
+        PreparedStatement statement = null;
 
+        try {
+            statement = conn.prepareStatement("DELETE FROM department WHERE Id = ?");
+
+            statement.setInt(1, id);
+
+            int rows = statement.executeUpdate();
+            if (rows == 0) {
+                throw new DbException("This id dont exists!");
+            }
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        }
     }
 
     @Override
