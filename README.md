@@ -2,7 +2,7 @@
 
 Esse projeto é um simples CRUD de um vendedor e departamento, utilizando **Java**, **JDBC** e **MySQL** como banco de dados.
 
-O intuito da criação desse projeto foi para o estudo de **acesso ao banco de dados com JDBC**.
+O intuito da criação desse projeto foi para o estudo de **acesso ao banco de dados com JDBC**, e o uso do padrão de projeto DAO (Data Access Object).
 
 O projeto foi criado e buildado com o **IntelliJ IDEA**.
 
